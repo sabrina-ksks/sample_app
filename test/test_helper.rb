@@ -5,6 +5,9 @@ require "minitest/reporters"
 Minitest::Reporters.use!
 
 class ActiveSupport::TestCase
+  # test環境でもApplicationヘルパーを使えるようにする
+  include ApplicationHelper
+
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
 
